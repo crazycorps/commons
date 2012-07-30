@@ -1,10 +1,10 @@
-package com.jian.tools.util;
+package com.survey.tools.util;
 
 import java.util.Date;
 
 import org.apache.commons.lang3.time.DateFormatUtils;
 
-import com.jian.tools.TimeUtils;
+import com.survey.tools.TimeUtils;
 public class DateUtils {
 	
 	public static final String DEFAULT_DATE_FORMAT="yyyy-MM-dd HH:mm:ss";

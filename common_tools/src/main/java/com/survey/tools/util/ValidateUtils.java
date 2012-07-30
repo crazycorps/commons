@@ -1,4 +1,4 @@
-package com.jian.tools.util;
+package com.survey.tools.util;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.validator.routines.EmailValidator;

@@ -1,4 +1,4 @@
-package com.jian.tools.util;
+package com.survey.tools.util;
 
 public class BitUtils {
 	

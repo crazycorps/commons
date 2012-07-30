@@ -1,4 +1,4 @@
-package com.jian.tools.util;
+package com.survey.tools.util;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

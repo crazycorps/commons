@@ -1,4 +1,4 @@
-package com.jian.tools;
+package com.survey.tools;
 
 import java.util.concurrent.TimeUnit;
 
