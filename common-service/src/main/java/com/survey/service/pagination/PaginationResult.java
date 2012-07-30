@@ -1,4 +1,4 @@
-package com.jian.service.pagination;
+package com.survey.service.pagination;
 
 import java.util.ArrayList;
 import java.util.List;

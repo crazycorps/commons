@@ -1,4 +1,4 @@
-package com.jian.service;
+package com.survey.service;
 
 import java.io.Serializable;
 import java.util.List;
@@ -7,10 +7,10 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.jian.service.pagination.PaginationResult;
 import com.survey.dao.GenericDao;
 import com.survey.dao.pagination.AbstractObjectVO;
 import com.survey.dao.pagination.Pagination;
+import com.survey.service.pagination.PaginationResult;
 
 /**
  * 业务处理基接口

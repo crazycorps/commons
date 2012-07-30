@@ -1,14 +1,14 @@
-package com.jian.service.impl;
+package com.survey.service.impl;
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-import com.jian.service.GenericService;
-import com.jian.service.pagination.PaginationResult;
 import com.survey.dao.GenericDao;
 import com.survey.dao.pagination.AbstractObjectVO;
 import com.survey.dao.pagination.Pagination;
+import com.survey.service.GenericService;
+import com.survey.service.pagination.PaginationResult;
 
 /**
  * 业务处理实现基类。
