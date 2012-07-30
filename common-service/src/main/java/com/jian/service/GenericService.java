@@ -7,10 +7,10 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.jian.dao.GenericDao;
-import com.jian.dao.pagination.AbstractObjectVO;
-import com.jian.dao.pagination.Pagination;
 import com.jian.service.pagination.PaginationResult;
+import com.survey.dao.GenericDao;
+import com.survey.dao.pagination.AbstractObjectVO;
+import com.survey.dao.pagination.Pagination;
 
 /**
  * 业务处理基接口

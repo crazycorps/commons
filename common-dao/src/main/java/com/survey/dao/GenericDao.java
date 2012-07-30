@@ -1,11 +1,11 @@
-package com.jian.dao;
+package com.survey.dao;
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-import com.jian.dao.pagination.AbstractObjectVO;
-import com.jian.dao.pagination.Pagination;
+import com.survey.dao.pagination.AbstractObjectVO;
+import com.survey.dao.pagination.Pagination;
 
 /**
  * 数据访问dao基接口

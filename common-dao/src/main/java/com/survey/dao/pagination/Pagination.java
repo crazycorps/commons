@@ -1,4 +1,4 @@
-package com.jian.dao.pagination;
+package com.survey.dao.pagination;
 
 /**
  * 分页信息.

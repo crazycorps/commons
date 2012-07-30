@@ -1,4 +1,4 @@
-package com.jian.dao.impl;
+package com.survey.dao.impl;
 
 import java.io.Serializable;
 import java.util.List;
@@ -8,9 +8,9 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
-import com.jian.dao.GenericDao;
-import com.jian.dao.pagination.AbstractObjectVO;
-import com.jian.dao.pagination.Pagination;
+import com.survey.dao.GenericDao;
+import com.survey.dao.pagination.AbstractObjectVO;
+import com.survey.dao.pagination.Pagination;
 
 /**
  * 数据访问dao基类

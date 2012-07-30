@@ -1,23 +1,31 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.survey</groupId>
+	<groupId>com.jian</groupId>
 	<artifactId>common-dao</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>common-dao</name>
 	<description>common-dao</description>
 
 	<properties>
-		<spring.version>3.1.1.RELEASE</spring.version>
-		<mybatis.version>3.1.1</mybatis.version>
-		<spring.mybatis.version>1.1.1</spring.mybatis.version>
+		<spring.version>3.1.0.RELEASE</spring.version>
+		<mybatis.version>3.1.0-RELEASE</mybatis.version>
+		<spring.mybatis.version>1.1.0-RELEASE</spring.mybatis.version>
+		<common_tools.version>0.0.1-SNAPSHOT</common_tools.version>
 	</properties>
-
+	
 	<dependencies>
+		<dependency>
+			<groupId>com.jian</groupId>
+			<artifactId>common_tools</artifactId>
+			<version>${common_tools.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -26,7 +34,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis-spring</artifactId>
+			<artifactId>mybatis-spring-hosted</artifactId>
 			<version>${spring.mybatis.version}</version>
 		</dependency>
 		<dependency>
@@ -34,8 +42,30 @@
 			<artifactId>mybatis</artifactId>
 			<version>${mybatis.version}</version>
 		</dependency>
+		<dependency>
+		  <groupId>org.hibernate</groupId>
+		  <artifactId>hibernate</artifactId>
+		  <version>3.6.10.Final</version>
+		  <exclusions>
+		  	<exclusion>
+		 		<groupId>org.springframework</groupId>
+		 		<artifactId>spring-dao</artifactId>
+		 	</exclusion>
+		  </exclusions>
+		</dependency>
+		<dependency>
+		  <groupId>org.springframework</groupId>
+		  <artifactId>spring-hibernate3</artifactId>
+		  <version>2.0.8</version>
+		  <exclusions>
+		  	<exclusion>
+		  		<groupId>org.hibernate</groupId>
+		  		<artifactId>hibernate</artifactId>
+		  	</exclusion>
+		  </exclusions>
+		</dependency>
 	</dependencies>
-
+	
 	<build>
 		<finalName>common-dao</finalName>
 		<plugins>
@@ -57,7 +87,15 @@
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
-					<encoding>UTF-8</encoding>
+					<encoding>UTF-8</encoding> 
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.0</version>
+				<configuration>
+					<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -69,14 +107,19 @@
 				</configuration>
 			</plugin>
 		</plugins>
-
+		
 	</build>
-	<repositories>
-		<repository>
-			<id>mybatis-snapshot</id>
-			<name>MyBatis Snapshot Repository</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</repository>
-	</repositories>
-
+	
+	<distributionManagement>
+        <repository>
+            <id>nexus-release</id>
+            <name>Nexus Release Repository</name>
+            <url>http://nexus:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>Nexus Snapshots Repository</name>
+            <url>http://nexus:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
