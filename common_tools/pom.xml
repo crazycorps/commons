@@ -1,12 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.survey</groupId>
-  <artifactId>common_tools</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>common_tools</name>
-  <description>common_tools</description>
-  
-  <properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.survey</groupId>
+	<artifactId>common_tools</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>common_tools</name>
+	<description>common_tools</description>
+
+	<properties>
 		<finalName>common_tools</finalName>
 		<maven-checkstyle-plugin.version>2.6</maven-checkstyle-plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -18,9 +19,9 @@
 		<servlet.version>2.5</servlet.version>
 		<jackson.version>1.5.2</jackson.version>
 		<commons.lang3>3.1</commons.lang3>
- </properties>
-	
-  <dependencies>
+	</properties>
+
+	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -40,7 +41,7 @@
 			<artifactId>httpclient</artifactId>
 			<version>${httpclient.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-core-asl</artifactId>
@@ -51,19 +52,19 @@
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>${commons.lang3}</version>
 		</dependency>
-		
+
 		<dependency>
-			<groupId>org.apache.commons</groupId>
+			<groupId>commons-validator</groupId>
 			<artifactId>commons-validator</artifactId>
 			<version>1.4.0</version>
-		</dependency> 
-		 
+		</dependency>
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
@@ -72,7 +73,7 @@
 		</dependency>
 
 	</dependencies>
-	
+
 	<build>
 		<finalName>${finalName}</finalName>
 		<plugins>
@@ -94,7 +95,7 @@
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
-					<encoding>UTF-8</encoding> 
+					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -138,17 +139,17 @@
 			</resource>
 		</resources>
 	</build>
-	
+
 	<distributionManagement>
-        <repository>
-            <id>nexus-release</id>
-            <name>Nexus Release Repository</name>
-            <url>http://nexus:8081/nexus/content/repositories/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>nexus-snapshots</id>
-            <name>Nexus Snapshots Repository</name>
-            <url>http://nexus:8081/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
+		<repository>
+			<id>nexus-release</id>
+			<name>Nexus Release Repository</name>
+			<url>http://nexus:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<name>Nexus Snapshots Repository</name>
+			<url>http://nexus:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
