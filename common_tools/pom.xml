@@ -1,6 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.survey</groupId>
+		<artifactId>common_parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
 	<groupId>com.survey</groupId>
 	<artifactId>common_tools</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -9,8 +14,6 @@
 
 	<properties>
 		<finalName>common_tools</finalName>
-		<maven-checkstyle-plugin.version>2.6</maven-checkstyle-plugin.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<junit.version>4.8.2</junit.version>
 		<hamcrest.version>1.1</hamcrest.version>
 		<compiler.version>1.6</compiler.version>
@@ -76,80 +79,6 @@
 
 	<build>
 		<finalName>${finalName}</finalName>
-		<plugins>
-			<plugin>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.6</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.5</version>
-				<configuration>
-					<skipTests>true</skipTests>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-					<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.0</version>
-				<configuration>
-					<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.4</version>
-				<configuration>
-					<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin>
-		</plugins>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<includes>
-					<include>${platform.setting.dir}/*</include>
-					<include>${dir.name}/**</include>
-					<include>com/**</include>
-					<include>common/*</include>
-					<include>applicationContext/*</include>
-					<include>*</include>
-				</includes>
-			</resource>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-				<includes>
-					<include>platform_applicationContext.xml</include>
-					<include>app_tencent.xml</include>
-					<include>constant_file.properties</include>
-					<include>spring-mvc.xml</include>
-				</includes>
-			</resource>
-		</resources>
 	</build>
 
-	<distributionManagement>
-		<repository>
-			<id>nexus-release</id>
-			<name>Nexus Release Repository</name>
-			<url>http://nexus:8081/nexus/content/repositories/releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>nexus-snapshots</id>
-			<name>Nexus Snapshots Repository</name>
-			<url>http://nexus:8081/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
 </project>
