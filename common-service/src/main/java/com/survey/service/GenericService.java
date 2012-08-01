@@ -8,9 +8,9 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.survey.dao.GenericDao;
-import com.survey.dao.pagination.AbstractObjectVO;
-import com.survey.dao.pagination.Pagination;
+import com.survey.service.pagination.Pagination;
 import com.survey.service.pagination.PaginationResult;
+import com.survey.service.vo.AbstractObjectVO;
 
 /**
  * 业务处理基接口
@@ -21,9 +21,11 @@ import com.survey.service.pagination.PaginationResult;
  * @param <PK>
  */
 @Transactional(isolation = Isolation.READ_COMMITTED, readOnly = true)
-public interface GenericService<T, PK extends Serializable> {
+public interface GenericService<R extends AbstractObjectVO<T>,T, PK extends Serializable> {
 	
-	GenericDao getGenricDao();
+	GenericDao<T,PK> getGenricDao();
+	
+	Class<R> getClassR();
 	
 	@Transactional(propagation = Propagation.SUPPORTS)
 	T getById(PK id) throws Exception ;
@@ -44,15 +46,15 @@ public interface GenericService<T, PK extends Serializable> {
 	Long removeById(PK id) throws Exception ;
 	
 	@Transactional(propagation = Propagation.SUPPORTS)
-	T get(AbstractObjectVO vo) throws Exception ;
+	T get(T vo) throws Exception ;
 	
-	List<T> getMatch(AbstractObjectVO vo) throws Exception;
+	List<T> getMatch(T t) throws Exception;
 	
-	Pagination getPagination(AbstractObjectVO<T> vo,int pageNo,int pageSize) throws Exception ;
+	Pagination getPagination(T t,int pageNo,int pageSize) throws Exception ;
 	
-	PaginationResult<T> getPaginationResult(AbstractObjectVO<T> vo,int pageNo,int pageSize)throws Exception ;
+	PaginationResult<T> getPaginationResult(T t,int pageNo,int pageSize)throws Exception ;
 	
-	PaginationResult getVoPaginationResult(AbstractObjectVO<T> vo,int pageNo,int pageSize)throws Exception ;
+	PaginationResult<R> getVoPaginationResult(T t,int pageNo,int pageSize)throws Exception ;
 	
 	List<T> getByIds(PK[] ids);
 	

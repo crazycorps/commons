@@ -3,7 +3,6 @@ package com.survey.service.pagination;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.survey.dao.pagination.Pagination;
 
 public class PaginationResult<T>  {
 

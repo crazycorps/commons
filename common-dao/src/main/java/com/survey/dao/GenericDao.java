@@ -2,20 +2,14 @@ package com.survey.dao;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Map;
-
-import com.survey.dao.pagination.AbstractObjectVO;
-import com.survey.dao.pagination.Pagination;
 
 /**
  * 数据访问dao基接口
  * 
- * @author jason
- * 
  * @param <T>
  * @param <PK>
  */
-public interface GenericDao<T, PK extends Serializable> {
+public interface GenericDao<T,PK extends Serializable> {
 	
 	/**
 	 * 每个继承该接口的dao，必须实现该接口，该接口主要针对mybatis的namespace
@@ -37,7 +31,7 @@ public interface GenericDao<T, PK extends Serializable> {
 	
 	Long deleteById(PK id) throws Exception ;
 	
-	Long selecCount(AbstractObjectVO query) throws Exception;
+	Long selecCount(T query) throws Exception;
 	
 	/**
 	 * 分页查询
@@ -46,17 +40,15 @@ public interface GenericDao<T, PK extends Serializable> {
 	 * @return
 	 * @throws Exception
 	 */
-	List<T> selectList(AbstractObjectVO query, Pagination pagination)throws Exception ;
+	public List<T> selectList(T query, int offset,int limit)throws Exception ;
 	
 	/**
-	 * 分页查询
+	 * 查询满足条件的记录（默认只返回1000条）
 	 * @param query
 	 * @return
 	 * @throws Exception
 	 */
-	List<T> selectMatchList(AbstractObjectVO query)throws Exception ;
-	
-	List<? extends AbstractObjectVO<T>> selectVoList(AbstractObjectVO query, Pagination pagination)throws Exception ;
+	List<T> selectMatchList(T query)throws Exception ;
 	
 	/**
 	 * 查询满足条件的数据，不做分页处理
@@ -72,7 +64,7 @@ public interface GenericDao<T, PK extends Serializable> {
 	 * @return
 	 * @throws Exception
 	 */
-	T selectOne(AbstractObjectVO query)throws Exception;
+	T selectOne(T query)throws Exception;
 	
 	/**
 	 * 查询匹配的条数
@@ -80,7 +72,7 @@ public interface GenericDao<T, PK extends Serializable> {
 	 * @return
 	 * @throws Exception
 	 */
-	long matchCount(AbstractObjectVO query)throws Exception;
+	long matchCount(T query)throws Exception;
 	
 	/**
 	 * 匹配的条件是否存在记录
@@ -88,7 +80,7 @@ public interface GenericDao<T, PK extends Serializable> {
 	 * @return
 	 * @throws Exception
 	 */
-	boolean isExist(AbstractObjectVO query)throws Exception;
+	boolean isExist(T query)throws Exception;
 	
 	/**
 	 * 删除满足查询条件的记录
@@ -96,7 +88,7 @@ public interface GenericDao<T, PK extends Serializable> {
 	 * @return
 	 * @throws Exception
 	 */
-	long deleteByQuery(AbstractObjectVO query)throws Exception;
+	long deleteByQuery(T query)throws Exception;
 	
 	/**
 	 * 通过主键，更新设置的属性
