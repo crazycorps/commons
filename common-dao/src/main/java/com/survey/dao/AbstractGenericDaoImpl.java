@@ -1,4 +1,4 @@
-package com.survey.dao.impl;
+package com.survey.dao;
 
 import java.io.Serializable;
 import java.util.List;
@@ -8,7 +8,6 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
-import com.survey.dao.GenericDao;
 
 /**
  * 数据访问dao基类
@@ -16,7 +15,7 @@ import com.survey.dao.GenericDao;
  * @param <T>
  * @param <PK>
  */
-public class GenericDaoImpl<T, PK extends Serializable> implements
+public abstract class AbstractGenericDaoImpl<T, PK extends Serializable> implements
 		GenericDao<T, PK> {
 
 	@Autowired(required=false)
