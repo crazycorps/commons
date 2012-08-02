@@ -55,7 +55,7 @@ public abstract class AbstractGenericServiceImpl<R extends AbstractObjectVO<T>,T
 	public PaginationResult<T> getPaginationResult(T t,int pageNo,int pageSize) throws Exception {
 		int recordCount=this.getGenricDao().selecCount(t).intValue();
 		Pagination pagination=new Pagination(pageNo,pageSize,recordCount);
-		List<T> results=this.getGenricDao().selectList(t, pagination.getPageOffset(),pagination.getPageCount());
+		List<T> results=this.getGenricDao().selectList(t, pagination.getPageOffset(),pagination.getPageSize());
 		return new PaginationResult<T>(results,pagination);
 	}
 
@@ -63,7 +63,7 @@ public abstract class AbstractGenericServiceImpl<R extends AbstractObjectVO<T>,T
 	public PaginationResult<R> getVoPaginationResult(T t, int pageNo, int pageSize) throws Exception {
 		int recordCount=this.getGenricDao().selecCount(t).intValue();
 		Pagination pagination=new Pagination(pageNo,pageSize,recordCount);
-		List<T> results=this.getGenricDao().selectList(t, pagination.getPageOffset(),pagination.getPageCount());
+		List<T> results=this.getGenricDao().selectList(t, pagination.getPageOffset(),pagination.getPageSize());
 		List<R> resultProcessedList=new ArrayList<R>();
 		if(results!=null&&!results.isEmpty()){
 			for(T tt:results){

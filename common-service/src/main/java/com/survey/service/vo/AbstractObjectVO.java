@@ -7,9 +7,8 @@ public abstract class AbstractObjectVO<T> implements Serializable {
 	
 	protected T entity;
 
-	public AbstractObjectVO(T entity) {
+	public AbstractObjectVO() {
 		super();
-		this.entity = entity;
 	}
 
 	public T getEntity() {
