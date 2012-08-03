@@ -10,7 +10,7 @@ public class Pagination  {
 	/**
 	 * 缺省每页显示的条数.
 	 */
-	public static final int DEFAULT_PAGE_SIZE = 15;
+	public static final int DEFAULT_PAGE_SIZE = 10;
 
 	/**
 	 * 缺省第一页页码.
