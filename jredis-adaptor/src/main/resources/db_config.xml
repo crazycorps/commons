@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<masters>
+		<dbinfo>
+			<name>node1</name>
+			<ip>127.0.0.1</ip>
+			<port>8001</port>
+		</dbinfo>
+		<dbinfo>
+			<name>node2</name>
+			<ip>127.0.0.1</ip>
+			<port>8002</port>
+		</dbinfo>
+	</masters>
+
+	<slaves>
+		<dbinfo>
+			<name>node1</name>
+			<ip>127.0.0.2</ip>
+			<port>9001</port>
+		</dbinfo>
+	</slaves>
+</config>
