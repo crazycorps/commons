@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+	<timeBetweenEvictionRunsMillis>60000</timeBetweenEvictionRunsMillis>
+	<maxActive>100</maxActive>
+	<maxIdle>50</maxIdle>
+	<maxWait>2</maxWait>
+	<testWhileIdle>true</testWhileIdle>
+	<masters>
+		<dbinfo>
+			<name>node1</name>
+			<ip>192.168.20.20</ip>
+			<port>6379</port>
+		</dbinfo>
+	</masters>
+
+	<slaves>
+		<dbinfo>
+			<name>node1</name>
+			<ip>192.168.20.20</ip>
+			<port>6379</port>
+		</dbinfo>
+	</slaves>
+</config>

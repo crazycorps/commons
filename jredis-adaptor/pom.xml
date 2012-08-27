@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+		<groupId>com.survey</groupId>
+		<artifactId>common_parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+  <groupId>com.survey</groupId>
+  <artifactId>jredis-adaptor</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>jredis-adaptor</name>
+  <description>jredis-adaptor</description>
+  <build>
+		<finalName>jredis-adaptor</finalName>
+	</build>
+	  
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.13</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+			<version>1.5.5</version>
+		</dependency>
+		<dependency>
+		  <groupId>dom4j</groupId>
+		  <artifactId>dom4j</artifactId>
+		  <version>2.0</version>
+		  <classifier>dom4j</classifier>
+		</dependency>
+		<dependency>
+			<groupId>redis-clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>1.5.2</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		
+	</dependencies>
+</project>
