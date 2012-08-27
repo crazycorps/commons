@@ -1,0 +1,18 @@
+option java_package = "com.survey.protobuf.proto";
+option java_outer_classname = "ToolsProto";
+
+message SimpleList {
+	repeated bytes elements = 1;
+}
+
+message IntList {
+	repeated int32 elements = 1 [packed=true];
+}
+
+message LongList {
+	repeated int64 elements = 1 [packed=true];
+}
+
+message StringList {
+	repeated string elements = 1;
+}
