@@ -1,4 +1,4 @@
-package com.hoolai.protobuf;
+package com.survey.protobuf;
 
 import org.junit.Ignore;
 import org.junit.Test;
