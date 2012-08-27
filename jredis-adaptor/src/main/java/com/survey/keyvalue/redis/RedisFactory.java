@@ -7,15 +7,15 @@ import org.apache.commons.pool.impl.GenericObjectPool.Config;
 import com.survey.keyvalue.config.DbConfig;
 import com.survey.keyvalue.config.DbConfig.DbInfo;
 import com.survey.keyvalue.redis.shard.ConsistentShardingAlgorithm;
-import com.survey.keyvalue.redis.shard.JRedisShardImpl;
+import com.survey.keyvalue.redis.shard.RedisShardImpl;
 import com.survey.keyvalue.redis.shard.RedisShardInfo;
 import com.survey.keyvalue.redis.shard.ShardedRedisPool;
 import com.survey.keyvalue.redis.shard.ShardingAlgorithm;
 
-public class JRedisFactory {
+public class RedisFactory {
 
-    public static JRedis createJRedis(DbConfig dbConfig){
-        return new JRedisShardImpl(createAlgo(dbConfig));
+    public static Redis createJRedis(DbConfig dbConfig){
+        return new RedisShardImpl(createAlgo(dbConfig));
     }
 
     private static ShardingAlgorithm createAlgo(DbConfig dbConfig) {

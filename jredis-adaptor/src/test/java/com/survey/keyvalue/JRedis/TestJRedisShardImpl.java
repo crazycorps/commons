@@ -6,19 +6,19 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.survey.keyvalue.config.DbConfig;
-import com.survey.keyvalue.redis.JRedis;
-import com.survey.keyvalue.redis.JRedisFactory;
+import com.survey.keyvalue.redis.Redis;
+import com.survey.keyvalue.redis.RedisFactory;
 import com.survey.keyvalue.redis.StorageKey;
 
 public class TestJRedisShardImpl {
 
-    private JRedis jRedis;
+    private Redis jRedis;
     
     @Before
     public void setUp() throws Exception {
     	String confPath="db_config.xml";
 		DbConfig config=new DbConfig(confPath);
-        jRedis = JRedisFactory.createJRedis(config);
+        jRedis = RedisFactory.createJRedis(config);
     }
    
     @Test

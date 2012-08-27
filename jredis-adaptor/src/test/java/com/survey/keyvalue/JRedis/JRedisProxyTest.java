@@ -12,11 +12,11 @@ import org.junit.Test;
 
 import redis.clients.jedis.Jedis;
 
-import com.survey.keyvalue.redis.JRedis;
+import com.survey.keyvalue.redis.Redis;
 
 public class JRedisProxyTest {
 
-    private JRedis jRedis;
+    private Redis jRedis;
     
     @Before
     public void setUp() throws Exception {

@@ -10,7 +10,7 @@ import redis.clients.jedis.SortingParams;
 import redis.clients.jedis.Tuple;
 import redis.clients.jedis.Transaction;
 
-public interface JRedis {
+public interface Redis {
 
     boolean del(byte[]... keys);
 

@@ -17,15 +17,15 @@ import redis.clients.jedis.SortingParams;
 import redis.clients.jedis.Transaction;
 import redis.clients.jedis.Tuple;
 
-import com.survey.keyvalue.redis.JRedis;
+import com.survey.keyvalue.redis.Redis;
 
-public class JRedisShardImpl implements JRedis {
+public class RedisShardImpl implements Redis {
 	
 	private static final Logger logger=Logger.getLogger("redis");
 	
     private ShardingAlgorithm shardingAlgo;
 
-    public JRedisShardImpl(ShardingAlgorithm algo) {
+    public RedisShardImpl(ShardingAlgorithm algo) {
         this.shardingAlgo = algo;
     }
 
