@@ -8,7 +8,7 @@ import org.junit.Test;
 public class TestRedisDbConfig {
 
 	private static final Logger logger=Logger.getLogger("redis");
-	
+	 
 	@Test
 	public void testLoadConfig(){
 		String confPath="db_config.xml";
