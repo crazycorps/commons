@@ -5,13 +5,14 @@
 		<groupId>com.survey</groupId>
 		<artifactId>common_parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../</relativePath>
 	</parent>
 	<groupId>com.survey</groupId>
 	<artifactId>common-test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>common-test</name>
 	<description>common-test</description>
-
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -40,16 +41,4 @@
 		<finalName>common-test</finalName>
 	</build>
 	
-	<distributionManagement>
-        <repository>
-            <id>nexus-release</id>
-            <name>Nexus Release Repository</name>
-            <url>http://nexus:8081/nexus/content/repositories/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>nexus-snapshots</id>
-            <name>Nexus Snapshots Repository</name>
-            <url>http://nexus:8081/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
 </project>

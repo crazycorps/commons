@@ -8,13 +8,14 @@
 	<name>common_parent</name>
 	<description>common_parent</description>
 
+	<!-- 
 	<modules>
 		<module>../common_tools</module>
 		<module>../common-dao</module>
 		<module>../common-service</module>
 		<module>../common-test</module>
 	</modules>
-
+ 	-->
 	<properties>
 		<projectName>common_parent</projectName>
 		<maven-eclipse-plugin.version>2.6</maven-eclipse-plugin.version>
