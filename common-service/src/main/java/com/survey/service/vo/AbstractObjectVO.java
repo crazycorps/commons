@@ -16,6 +16,12 @@ public abstract class AbstractObjectVO<T> implements Serializable {
 		super();
 	}
 
+	public AbstractObjectVO(T entity) {
+		super();
+		this.entity = entity;
+	}
+
+
 	public T getEntity() {
 		return entity;
 	}
