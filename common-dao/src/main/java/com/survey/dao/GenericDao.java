@@ -122,5 +122,5 @@ public interface GenericDao<T,PK extends Serializable> {
 	long decreaseEntitySelectiveById(T t)throws Exception;
 	
 	List<T> selectByIds(PK[] ids);
-
+	
 }

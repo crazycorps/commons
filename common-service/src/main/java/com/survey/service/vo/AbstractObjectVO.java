@@ -42,12 +42,16 @@ public abstract class AbstractObjectVO<T> implements Serializable {
 	
 	public static long parseSn(String sn,byte[] secretKey){
 		try {
-			byte[] data = AESCoder.decrypt(sn.getBytes(), secretKey);
+			byte[] data = AESCoder.decrypt(Hex.decodeHex(sn.toCharArray()), secretKey);
 			return BitUtils.bytes2long(data, 0);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return -1L;
+	}
+	
+	public static boolean isValidFromSn(long id){
+		return id!=-1;
 	}
 
 }
